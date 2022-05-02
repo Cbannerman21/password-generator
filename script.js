@@ -100,6 +100,26 @@ var specCharConfirm = function() {
                         break;
                 }
             }
+            if (password.length === length) {
+                return password;
+            }
+        }
+    }
+
+    var getPasswordLength = function() {
+        var passwordLength = "";
+        var parseLength;
+
+        while (passwordLength == "" || passwordLength == null) {
+            passwordLength = prompt("How many characters would you like your password to be? Choose a number between 8 and 128 characters.");
+        }
+        parseLength = parseInt(passwordLength);
+        if (parseLength > 7 && parseLength < 129) {
+            return parseLength;
+        }
+        else {
+            window.alert("Please enter a number within the valid range.");
+            getPasswordLength();
         }
     }
 // Get references to the #generate element
