@@ -1,4 +1,4 @@
-# password-generator
+# Password Security
 
 ## Purpose
     This website was built to help us generate a random password for applications that require secure logins.
