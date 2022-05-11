@@ -1,13 +1,13 @@
 // Assignment code here
 
 //writing functions to produce uppercase, lowercase, special characters, and numbers for the pasword generator.
-//using math round to round to the nearest whole number instead of math floor to make randomization more effective.
+//using math round instead of math floor to make randomization more effective.
 function getRandomLowercaseLetter() {
     var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     return lowerCase[Math.round(Math.random() * lowerCase.length)];
 }
 
-function getRandomUpperCaseLetter() {
+function getRandomUppercaseLetter() {
     var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     return upperCase[Math.round(Math.random() * upperCase.length)];
 }
@@ -60,7 +60,7 @@ var specCharConfirm = function() {
             return false;
         }
     }
-
+// created function for creating the password after all of the user input is received.
     function generatePassword() {
         var length = getPasswordLength();
         var lowerCon = lowerCaseConfirm();
@@ -73,24 +73,24 @@ var specCharConfirm = function() {
         }
         else {
             while (password.length < length) {
-                var getType = Math.round(Math.random() * 6)
+                var getType = Math.floor(Math.random() * 4)
                 switch (getType) {
-                    case 1:
+                    case 0:
                         if (lowerCon == true) {
                             password += getRandomLowercaseLetter();
                         }
                         break;
-                    case 2:
+                    case 1:
                         if (upperCon == true) {
                             password += getRandomUppercaseLetter();
                         } 
                         break;   
-                    case 3:
+                    case 2:
                         if (specCharCon == true) {
                             password += getRandomSpecialCharacter();
                         }    
                         break;
-                    case 4:
+                    case 3:
                         if (numberCon == true) {
                             password += getRandomNumber();
                         }
